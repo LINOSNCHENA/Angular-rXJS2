@@ -1,1 +1,73 @@
-/* You can add global styles to this file, and also import other style files */
+
+/* Rounded corners and box shadow */
+.card {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Gradient background */
+  .gradient-bg {
+    background: linear-gradient(to right, #3498db, #f39c12);
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  /* Flexbox layout */
+  .flex-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+  }
+  
+  /* Transitions */
+  .button {
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .button:hover {
+    background-color: #2980b9;
+  }
+  
+
+  /* Table styles */
+.table {
+    width: 100%;
+    margin-bottom: 1rem;
+    border-collapse: collapse;
+  }
+  
+  /* Table headers */
+  .table th {
+    padding: 0.75rem;
+    text-align: left;
+    background-color: #f0f0f0; /* Light gray background for headers */
+    border: 1px solid #ccc; /* Gray border for headers */
+  }
+  
+  /* Table rows */
+  .table td, .table th {
+    padding: 0.75rem;
+    border: 1px solid #ccc; /* Gray border for cells */
+  }
+  
+  /* Blue table */
+  .blue-table {
+    background-color: #3498db; /* Blue background color */
+    color: white; /* White text color */
+  }
+  
+  /* Yellow table */
+  .yellow-table {
+    background-color: #f1c40f; /* Yellow background color */
+    color: black; /* Black text color */
+  }
+  
