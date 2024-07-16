@@ -36,12 +36,21 @@ ng generate component home --standalone
 ng generate component customers --standalone
 ng generate component loans --standalone
 ng generate component collections --standalone
-ng generate service post
+ng generate component analytics --standalone
+
 ng generate module shared
+ng generate service services/post
+ng generate service services/supabase
 
 
 npm install madge -g
 madge --circular src/
+
+npm install dotenv --save-dev
+npm install @supabase/supabase-js
+ng generate environments
+
+
 
 
 

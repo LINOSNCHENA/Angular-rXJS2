@@ -1,17 +1,18 @@
 import { Component, OnInit } from '@angular/core';
-import { Post, PostService } from '../post.service';
 import { SharedModule } from '../shared/shared.module';
 import { CommonModule, NgFor } from '@angular/common';
 import { map, Observable } from 'rxjs';
 import { CustomersComponent } from '../customers/customers.component';
 import { LoansComponent } from '../loans/loans.component';
 import { CollectionsComponent } from '../collections/collections.component';
+import { Post, PostService } from '../services/post.service';
+import { AnalyticsComponent } from "../analytics/analytics.component";
 
 @Component({
   selector: 'app-home',
   standalone: true,
   imports: [CommonModule, NgFor, SharedModule,
-    LoansComponent, CollectionsComponent, CustomersComponent],
+    LoansComponent, CollectionsComponent, CustomersComponent, AnalyticsComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })

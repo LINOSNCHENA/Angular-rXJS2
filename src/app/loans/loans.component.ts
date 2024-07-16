@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
-import { Post, PostService } from '../post.service';
 import { map, Observable } from 'rxjs';
 import { CommonModule, NgFor } from '@angular/common';
 import { SharedModule } from '../shared/shared.module';
+import { Post, PostService } from '../services/post.service';
 
 @Component({
   selector: 'app-loans',
