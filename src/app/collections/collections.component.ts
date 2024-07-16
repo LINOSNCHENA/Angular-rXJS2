@@ -27,9 +27,9 @@ export class CollectionsComponent implements OnInit {
   }
 
   fetchPosts() {
-    this.posts$ = this.dataService.getPosts();
+    this.posts$ = this.dataService.getCollections();
 
-    this.posts$ = this.dataService.getPosts().pipe(
+    this.posts$ = this.dataService.getCollections().pipe(
       map((posts ) => posts.slice(0, 3)) // Limit to maximum of 3 posts
     );
 

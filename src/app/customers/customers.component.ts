@@ -3,7 +3,6 @@ import { map, Observable } from 'rxjs';
 import { Post, PostService } from '../post.service';
 import { CommonModule, NgFor } from '@angular/common';
 import { SharedModule } from '../shared/shared.module';
-import { AppComponent } from '../app.component';
 
 @Component({
   selector: 'app-customers',
@@ -13,9 +12,7 @@ import { AppComponent } from '../app.component';
   styleUrl: './customers.component.css'
 })
 export class CustomersComponent implements OnInit {
-
-  post: any;
-   
+  post: any;   
   posts$!: Observable<Post[]>; 
   processedPosts: Post[] = [];
   topTwoPosts$!: Observable<Post[]>;
@@ -27,9 +24,9 @@ export class CustomersComponent implements OnInit {
   }
 
   fetchPosts() {
-    this.posts$ = this.dataService.getPosts();
+    this.posts$ = this.dataService.getCustomers();
 
-    this.posts$ = this.dataService.getPosts().pipe(
+    this.posts$ = this.dataService.getCustomers().pipe(
       map((posts ) => posts.slice(0, 3)) // Limit to maximum of 3 posts
     );
 

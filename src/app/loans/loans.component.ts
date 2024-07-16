@@ -25,10 +25,10 @@ export class LoansComponent {
   }
 
   fetchPosts() {
-    this.posts$ = this.dataService.getPosts();
+    this.posts$ = this.dataService.getLoans();
 
-    this.posts$ = this.dataService.getPosts().pipe(
-      map((posts ) => posts.slice(0, 3)) // Limit to maximum of 3 posts
+    this.posts$ = this.dataService.getLoans().pipe(
+      map((posts ) => posts.slice(0, 3)) 
     );
     this.topTwoPosts$ = this.posts$.pipe(
       map((posts) => posts.slice(0, 2)) // Only map the first two posts

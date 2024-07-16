@@ -18,7 +18,6 @@ import { CollectionsComponent } from '../collections/collections.component';
 
 export class HomeComponent implements OnInit {
   post: any;
-
   posts$!: Observable<Post[]>;
   processedPosts: Post[] = [];
   topTwoPosts$!: Observable<Post[]>;
@@ -30,9 +29,9 @@ export class HomeComponent implements OnInit {
   }
 
   fetchPosts() {
-    this.posts$ = this.dataService.getPosts();
+    this.posts$ = this.dataService.getLoans();
 
-    this.posts$ = this.dataService.getPosts().pipe(
+    this.posts$ = this.dataService.getLoans().pipe(
       map(posts => posts.slice(0, 3)) // Limit to maximum of 3 posts
     );
 

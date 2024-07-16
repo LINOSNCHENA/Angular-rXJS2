@@ -14,26 +14,27 @@ export interface Post {
   providedIn: 'root'
 })
 export class PostService {
-
   private readonly API_URL = 'https://jsonplaceholder.typicode.com/posts';
   constructor(private httpClient: HttpClient) { }
 
-  getOneData() {
-    this.httpClient.get(this.API_URL + '/1')
-      .subscribe(data => {
-        return data;
-      });
-  }
-
-  getPosts(): Observable<Post[]> {
+  
+  getCustomers() : Observable<Post[]> {
     return this.httpClient.get<Post[]>(this.API_URL).pipe(
       catchError(this.handleError)
     );
   }
-
+  getLoans(): Observable<Post[]> {
+    return this.httpClient.get<Post[]>(this.API_URL).pipe(
+      catchError(this.handleError)
+    );
+  }
+  getCollections(): Observable<Post[]> {
+    return this.httpClient.get<Post[]>(this.API_URL).pipe(
+      catchError(this.handleError)
+    );
+  }
   private handleError(error: any): Observable<never> {
     console.error('An error occurred:', error);
     return throwError(() => new Error('Something went wrong; please try again later.'));
   }
-
 }
