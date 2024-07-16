@@ -1,0 +1,41 @@
+import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { catchError, Observable, throwError } from 'rxjs';
+
+export interface Post {
+  slice(arg0: number, arg1: number): any;
+  userId: number;
+  id: number;
+  title: string;
+  body: string;
+}
+
+@Injectable({
+    providedIn: 'root'
+})
+export class PostService {
+
+  private readonly API_URL = 'https://jsonplaceholder.typicode.com/posts';
+    constructor(private httpClient: HttpClient) { }
+
+    getData() {
+        this.httpClient.get('https://jsonplaceholder.typicode.com/posts/1')
+            .subscribe(data => {
+                return data;
+            });
+    }
+
+
+    getPosts(): Observable<Post[]> {
+      return this.httpClient.get<Post[]>(this.API_URL).pipe(
+        catchError(this.handleError)
+      );
+    }
+  
+    private handleError(error: any): Observable<never> {
+      // Log the error or send it to an error logging service
+      console.error('An error occurred:', error);
+      return throwError(() => new Error('Something went wrong; please try again later.'));
+    }
+    
+}
