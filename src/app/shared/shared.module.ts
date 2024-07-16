@@ -13,7 +13,8 @@ import { PostService } from '../post.service';
 @NgModule({
   declarations: [],
   imports: [
-    CommonModule,LoansComponent,CustomersComponent,CollectionsComponent,HomeComponent, HttpClientModule
+    CommonModule,LoansComponent,CustomersComponent,CollectionsComponent,
+    HomeComponent, HttpClientModule,LoansComponent
   ],
   exports: [
     HttpClientModule

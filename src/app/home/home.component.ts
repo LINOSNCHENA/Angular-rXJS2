@@ -4,15 +4,19 @@ import {  Post, PostService } from '../post.service';
 import { SharedModule } from '../shared/shared.module';
 import { CommonModule } from '@angular/common';
 import { map, Observable } from 'rxjs';
+import { CustomersComponent } from '../customers/customers.component';
+import { LoansComponent } from '../loans/loans.component';
+import { CollectionsComponent } from '../collections/collections.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [AppComponent,SharedModule, CommonModule],
+  imports: [AppComponent,SharedModule, CommonModule, 
+    CustomersComponent, LoansComponent,CollectionsComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
-// export class HomeComponent {
+
   export class HomeComponent implements OnInit {
   post: any;
    
@@ -28,10 +32,13 @@ import { map, Observable } from 'rxjs';
 
   fetchPosts() {
     this.posts$ = this.dataService.getPosts();
+
+    this.posts$ = this.dataService.getPosts().pipe(
+      map(posts => posts.slice(0, 3)) // Limit to maximum of 3 posts
+    );
+
     this.topTwoPosts$ = this.posts$.pipe(
       map(posts => posts.slice(0, 2)) // Only map the first two posts
     );
   }
-
-
 }
