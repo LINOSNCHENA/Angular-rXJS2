@@ -13,14 +13,16 @@ import { PostService } from '../post.service';
 @NgModule({
   declarations: [],
   imports: [
-    CommonModule,LoansComponent,CustomersComponent,CollectionsComponent,
-    HomeComponent, HttpClientModule,LoansComponent
+    HttpClientModule,
+    CommonModule,
+ 
   ],
   exports: [
-    HttpClientModule
+    HttpClientModule,
+    CommonModule
 ],
 
 providers: [PostService],
-bootstrap: [AppComponent]
+//bootstrap: [AppComponent]
 })
 export class SharedModule { }

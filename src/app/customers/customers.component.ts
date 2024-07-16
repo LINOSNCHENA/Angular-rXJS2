@@ -1,13 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { map, Observable } from 'rxjs';
 import { Post, PostService } from '../post.service';
-import { HomeComponent } from '../home/home.component';
 import { CommonModule, NgFor } from '@angular/common';
+import { SharedModule } from '../shared/shared.module';
+import { AppComponent } from '../app.component';
 
 @Component({
   selector: 'app-customers',
   standalone: true,
-  imports: [HomeComponent,CommonModule],
+  imports: [SharedModule, CommonModule, NgFor],
   templateUrl: './customers.component.html',
   styleUrl: './customers.component.css'
 })

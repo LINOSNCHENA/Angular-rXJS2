@@ -3,11 +3,13 @@ import { HomeComponent } from '../home/home.component';
 import { map, Observable } from 'rxjs';
 import { Post, PostService } from '../post.service';
 import { CommonModule, NgFor } from '@angular/common';
+import { SharedModule } from '../shared/shared.module';
 
 @Component({
   selector: 'app-collections',
   standalone: true,
-  imports: [HomeComponent,CommonModule],
+  //imports: [HomeComponent,CommonModule],
+  imports: [SharedModule, CommonModule, NgFor],
   templateUrl: './collections.component.html',
   styleUrl: './collections.component.css'
 })

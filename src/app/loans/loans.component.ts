@@ -1,13 +1,14 @@
 import { Component } from '@angular/core';
-import { HomeComponent } from '../home/home.component';
 import { Post, PostService } from '../post.service';
 import { map, Observable } from 'rxjs';
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgFor } from '@angular/common';
+import { SharedModule } from '../shared/shared.module';
+import { AppComponent } from '../app.component';
 
 @Component({
   selector: 'app-loans',
   standalone: true,
-  imports: [HomeComponent,CommonModule],
+  imports: [CommonModule, NgFor, SharedModule],
   templateUrl: './loans.component.html',
   styleUrl: './loans.component.css'
 })
@@ -15,7 +16,7 @@ export class LoansComponent {
 
   post: any;
    
-  posts$!: Observable<Post[]>; // Observable of an array of posts
+  posts$!: Observable<Post[]>; 
   processedPosts: Post[] = [];
   topTwoPosts$!: Observable<Post[]>;
 

@@ -33,7 +33,6 @@ export class PostService {
     }
   
     private handleError(error: any): Observable<never> {
-      // Log the error or send it to an error logging service
       console.error('An error occurred:', error);
       return throwError(() => new Error('Something went wrong; please try again later.'));
     }

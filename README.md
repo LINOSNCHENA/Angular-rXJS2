@@ -40,4 +40,9 @@ ng generate service post
 ng generate module shared
 
 
+npm install madge -g
+madge --circular src/
+
+
+
 ## End 
