@@ -8,7 +8,7 @@ describe('PostService', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule], // Import HttpClientTestingModule
+      imports: [HttpClientTestingModule], 
     });
     service = TestBed.inject(PostService);
   });

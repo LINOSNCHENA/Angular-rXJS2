@@ -10,9 +10,8 @@ import { CollectionsComponent } from '../collections/collections.component';
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, NgFor,SharedModule, LoansComponent,
-    CollectionsComponent,
-    CustomersComponent],
+  imports: [CommonModule, NgFor, SharedModule,
+    LoansComponent, CollectionsComponent, CustomersComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
@@ -20,7 +19,7 @@ import { CollectionsComponent } from '../collections/collections.component';
 export class HomeComponent implements OnInit {
   post: any;
 
-  posts$!: Observable<Post[]>; // Observable of an array of posts
+  posts$!: Observable<Post[]>;
   processedPosts: Post[] = [];
   topTwoPosts$!: Observable<Post[]>;
 

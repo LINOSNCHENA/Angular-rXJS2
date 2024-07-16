@@ -8,7 +8,6 @@ import { SharedModule } from '../shared/shared.module';
 @Component({
   selector: 'app-collections',
   standalone: true,
-  //imports: [HomeComponent,CommonModule],
   imports: [SharedModule, CommonModule, NgFor],
   templateUrl: './collections.component.html',
   styleUrl: './collections.component.css'
@@ -17,7 +16,7 @@ export class CollectionsComponent implements OnInit {
 
   post: any;
    
-  posts$!: Observable<Post[]>; // Observable of an array of posts
+  posts$!: Observable<Post[]>; 
   processedPosts: Post[] = [];
   topTwoPosts$!: Observable<Post[]>;
 

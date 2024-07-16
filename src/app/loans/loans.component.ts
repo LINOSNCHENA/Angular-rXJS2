@@ -3,7 +3,6 @@ import { Post, PostService } from '../post.service';
 import { map, Observable } from 'rxjs';
 import { CommonModule, NgFor } from '@angular/common';
 import { SharedModule } from '../shared/shared.module';
-import { AppComponent } from '../app.component';
 
 @Component({
   selector: 'app-loans',
@@ -14,8 +13,7 @@ import { AppComponent } from '../app.component';
 })
 export class LoansComponent {
 
-  post: any;
-   
+  post: any;   
   posts$!: Observable<Post[]>; 
   processedPosts: Post[] = [];
   topTwoPosts$!: Observable<Post[]>;
@@ -32,7 +30,6 @@ export class LoansComponent {
     this.posts$ = this.dataService.getPosts().pipe(
       map((posts ) => posts.slice(0, 3)) // Limit to maximum of 3 posts
     );
-
     this.topTwoPosts$ = this.posts$.pipe(
       map((posts) => posts.slice(0, 2)) // Only map the first two posts
     );

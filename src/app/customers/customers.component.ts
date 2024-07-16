@@ -16,7 +16,7 @@ export class CustomersComponent implements OnInit {
 
   post: any;
    
-  posts$!: Observable<Post[]>; // Observable of an array of posts
+  posts$!: Observable<Post[]>; 
   processedPosts: Post[] = [];
   topTwoPosts$!: Observable<Post[]>;
 
