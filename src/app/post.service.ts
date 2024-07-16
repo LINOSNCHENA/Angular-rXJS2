@@ -14,22 +14,31 @@ export interface Post {
   providedIn: 'root'
 })
 export class PostService {
-  private readonly API_URL = 'https://jsonplaceholder.typicode.com/posts';
+
+  private clients = 1;
+  private readonly API_URL1 = 'https://jsonplaceholder.typicode.com/posts'; // + this.clients;
+  private readonly API_URL2 = 'https://jsonplaceholder.typicode.com/posts';
+  private readonly API_URL3 = 'https://jsonplaceholder.typicode.com/posts';
+
   constructor(private httpClient: HttpClient) { }
 
-  
-  getCustomers() : Observable<Post[]> {
-    return this.httpClient.get<Post[]>(this.API_URL).pipe(
+
+  getCustomers(): Observable<Post[]> {
+    console.log(this.clients);
+    console.log(this.API_URL1);
+    console.log(this.API_URL2);
+    console.log(this.API_URL3);
+    return this.httpClient.get<Post[]>(this.API_URL1).pipe(
       catchError(this.handleError)
     );
   }
   getLoans(): Observable<Post[]> {
-    return this.httpClient.get<Post[]>(this.API_URL).pipe(
+    return this.httpClient.get<Post[]>(this.API_URL2).pipe(
       catchError(this.handleError)
     );
   }
   getCollections(): Observable<Post[]> {
-    return this.httpClient.get<Post[]>(this.API_URL).pipe(
+    return this.httpClient.get<Post[]>(this.API_URL3).pipe(
       catchError(this.handleError)
     );
   }
