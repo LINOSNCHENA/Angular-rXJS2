@@ -1,0 +1,29 @@
+<div class="tabs">
+  <button (click)="selectTab('tab1')" [class.active]="selectedTab === 'tab1'">Defaulting Loans</button>
+  <button (click)="selectTab('tab2')" [class.active]="selectedTab === 'tab2'">Pending Loans</button>
+  <button (click)="selectTab('tab3')" [class.active]="selectedTab === 'tab3'">Partial Payments</button>
+  <button (click)="selectTab('tab4')" [class.active]="selectedTab === 'tab4'">Good Clients</button>
+  <button (click)="selectTab('tab5')" [class.active]="selectedTab === 'tab5'">Bad Clients</button>
+  <button (click)="selectTab('tab6')" [class.active]="selectedTab === 'tab6'">Loan Officer Performance</button>
+</div>
+
+<div class="tab-content">
+  <ng-container *ngIf="selectedTab === 'tab1'">
+    <p>Defaulting loans for Tab 1</p>
+  </ng-container>
+  <ng-container *ngIf="selectedTab === 'tab2'">
+    <p>Pending Loans for Tab 2</p>
+  </ng-container>
+  <ng-container *ngIf="selectedTab === 'tab3'">
+    <p>Partial Payments for Tab 3</p>
+  </ng-container>
+  <ng-container *ngIf="selectedTab === 'tab4'">
+    <p>Details for Good Clients (Tab 4)</p>
+  </ng-container>
+  <ng-container *ngIf="selectedTab === 'tab5'">
+    <p>Details for Bad Clients (Tab 5)</p>
+  </ng-container>
+  <ng-container *ngIf="selectedTab === 'tab6'">
+    <p>Loan Officer Performance Details (Tab 6)</p>
+  </ng-container>
+</div>

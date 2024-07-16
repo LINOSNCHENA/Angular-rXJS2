@@ -53,5 +53,7 @@ ng generate environments
 
 
 
+ng generate component header
+ng generate component tabs
 
 ## End 
