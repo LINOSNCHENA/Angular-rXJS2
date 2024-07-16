@@ -1,14 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError, Observable, throwError } from 'rxjs';
+import { Post } from './model.model';
 
-export interface Post {
-  slice(arg0: number, arg1: number): any;
-  userId: number;
-  id: number;
-  title: string;
-  body: string;
-}
 
 @Injectable({
   providedIn: 'root'

@@ -18,7 +18,6 @@ export class AnalyticsComponent implements OnInit {
   analyticsData!: Observable<Analytics[]>;
   loading = false;
   error: string | null = null;
-
   constructor(private supabaseService: SupabaseService) { }
 
   ngOnInit(): void {

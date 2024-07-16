@@ -1,5 +1,3 @@
-// import { PostgrestResponse } from "@supabase/supabase-js";
-
 export interface Analytics {
     id: number;
     created: Date;
@@ -21,19 +19,12 @@ export interface Analytics {
     mProfited: number;
     mSalaries: number;
     success: number;
-  }
+}
 
-//   interface PostgrestResponse<T> {
-//     data?: T[];
-//     error?: Error;
-//     count?: number;
-//     status?: number;
-//     statusText?: string;
-//   }
-  
-//   interface Error {
-//     message: string;
-//     details?: any; // Additional details about the error
-//   }
-  
-//   export interface AnalyticsResponse extends PostgrestResponse<Analytics> {}
+export interface Post {
+    slice(arg0: number, arg1: number): any;
+    userId: number;
+    id: number;
+    title: string;
+    body: string;
+  }

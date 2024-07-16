@@ -5,8 +5,9 @@ import { map, Observable } from 'rxjs';
 import { CustomersComponent } from '../customers/customers.component';
 import { LoansComponent } from '../loans/loans.component';
 import { CollectionsComponent } from '../collections/collections.component';
-import { Post, PostService } from '../services/post.service';
+import { PostService } from '../services/post.service';
 import { AnalyticsComponent } from "../analytics/analytics.component";
+import { Post } from '../services/model.model';
 
 @Component({
   selector: 'app-home',

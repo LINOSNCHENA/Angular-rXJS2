@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { map, Observable } from 'rxjs';
-// import { Post, PostService } from '../post.service';
 import { CommonModule, NgFor } from '@angular/common';
 import { SharedModule } from '../shared/shared.module';
-import { Post, PostService } from '../services/post.service';
+import { PostService } from '../services/post.service';
+import { Post } from '../services/model.model';
 
 @Component({
   selector: 'app-collections',
