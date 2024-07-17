@@ -12,12 +12,20 @@ import { TabsComponent } from './tabs/tabs.component';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, SharedModule, CommonModule,RouterLink, RouterLinkActive,
-    LoansComponent, CollectionsComponent,TabsComponent,HeaderComponent,
+  imports: [RouterOutlet, SharedModule, CommonModule, RouterLink, RouterLinkActive,
+    LoansComponent, CollectionsComponent, TabsComponent, HeaderComponent,
     CustomersComponent, HomeComponent, HeaderComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent {
   title = 'troopers-money';
+
+  appName = import.meta.env.NG_APP_NAMES;
+  appVersion = import.meta.env.NG_APP_VERSION;
+  appModel = import.meta.env.NG_APP_MODEL;
+  appXXX = import.meta.env.NG_APP_XXX;
+
+  url = import.meta.env.NG_APP_SUP_URL;
+  key = import.meta.env.NG_APP_SUP_KEY;
 }

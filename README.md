@@ -45,15 +45,18 @@ ng generate service services/supabase
 
 npm install madge -g
 madge --circular src/
-
 npm install dotenv --save-dev
 npm install @supabase/supabase-js
 ng generate environments
-
-
-
-
 ng generate component header
 ng generate component tabs
+
+
+
+## Angular
+
+ng add @ngx-env/builder
+
+
 
 ## End 
