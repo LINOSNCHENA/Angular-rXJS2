@@ -49,7 +49,7 @@ export class AuthService {
     return from(sessionPromise).pipe(
       map(response => {
         const data = response.data.session;
-        localStorage.setItem('sessionData', JSON.stringify({data}))
+        localStorage.setItem('sessionData', JSON.stringify({ data }))
         return {
           session: {
             access_token: data?.access_token || '',
@@ -93,10 +93,17 @@ export class AuthService {
 
   }
 
-   // Optional: Retrieve session data from localStorage
-   getSessionDataFromLocalStorage(): SessionData | null {
+  // Optional: Retrieve session data from localStorage
+  getSessionDataFromLocalStorage(): SessionData | null {
     const storedSessionData = localStorage.getItem('sessionData');
     return storedSessionData ? JSON.parse(storedSessionData) : null;
   }
+
+  clearSessionData(): void {
+    localStorage.removeItem('sessionData');
+  }
+
+
+
 }
 

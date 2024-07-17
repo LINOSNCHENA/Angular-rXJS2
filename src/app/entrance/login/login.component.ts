@@ -3,12 +3,7 @@ import { FormBuilder, FormControl, ReactiveFormsModule, Validators } from '@angu
 import { AuthService } from '../../services/security/auth.service';
 import { Router, RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { SessionData } from '../../services/model.model';
-
-interface LogInForm {
-  email: FormControl<null | string>;
-  password: FormControl<null | string>;
-}
+import { LogInForm, SessionData } from '../../services/model.model';
 
 @Component({
   selector: 'app-login',
@@ -17,8 +12,8 @@ interface LogInForm {
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements OnInit {
 
+export class LoginComponent implements OnInit {
   private _formBuilder = inject(FormBuilder);
   private _authService = inject(AuthService);
   private _router = inject(Router);
@@ -35,10 +30,10 @@ export class LoginComponent implements OnInit {
       Validators.minLength(6),
     ]),
   });
-lastObject: any;
-sessionStatus2: any;
+  lastObject: any;
+  sessionStatus2: any;
 
-  constructor(private authService: AuthService) {}
+  constructor(private authService: AuthService) { }
   sessionData: SessionData | null = null;
   sessionActive: any | null = null;
 
@@ -54,8 +49,8 @@ sessionStatus2: any;
       }
     });
 
-   this.sessionActive= this.authService.getSessionDataFromLocalStorage()   ;
-   alert(' ACTIVE SESSION  : ' + this.sessionActive);
+  //  this.sessionActive = this.authService.getSessionDataFromLocalStorage();
+ //   alert(' ACTIVE SESSION  : ' + this.sessionActive);
 
   }
 
@@ -70,17 +65,17 @@ sessionStatus2: any;
       const password = this.form.value.password as string;
       const { error } = await this._authService.signInWithPassword(email, password);
       if (error) throw error;
-      const session = await this._authService.session(); 
+      const session = await this._authService.session();
       if (session) {
-        alert('User authenticated, session data: ' + JSON.stringify(session));
-        this.lastObject=session
+     ///   alert('User authenticated, session data: ' + JSON.stringify(session));
+        this.lastObject = session
         this._router.navigate(['user']);
       } else {
-        alert('User not authenticated, no session data available.');
+       // alert('User not authenticated, no session data available.');
       }
     } catch (error) {
       if (error instanceof Error) {
-        alert(error.message);
+       // alert(error.message);
         console.error('Login error:', error.message); // Log the error message
       }
     } finally {

@@ -5,6 +5,7 @@
   <button (click)="selectTab('tab4')" [class.active]="selectedTab === 'tab4'">Good Clients</button>
   <button (click)="selectTab('tab5')" [class.active]="selectedTab === 'tab5'">Bad Clients</button>
   <button (click)="selectTab('tab6')" [class.active]="selectedTab === 'tab6'">Officer Performance</button>
+  <button (click)="selectTab('tab9')" [class.active]="selectedTab === 'tab9'">User metadata</button>
   <button (click)="selectTab('tab10')" [class.active]="selectedTab === 'tab10'">Logs Details</button>
 </div>
 
@@ -28,8 +29,16 @@
     <p>Loan Officer Performance Details (Tab 6)</p>
   </ng-container>
 
+  <ng-container *ngIf="selectedTab === 'tab9'">
+    <p>Meta-data (Tab 9)</p>
+    <!-- <app-dashboard></app-dashboard> -->
+    <app-user></app-user>
+  </ng-container>
+
   <ng-container *ngIf="selectedTab === 'tab10'">
     <p>Health status (Tab 10)</p>
     <app-dashboard></app-dashboard>
   </ng-container>
+
+
 </div>
