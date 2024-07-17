@@ -8,13 +8,14 @@ import { SharedModule } from './shared/shared.module';
 import { CommonModule } from '@angular/common';
 import { HeaderComponent } from "./header/header.component";
 import { TabsComponent } from './tabs/tabs.component';
+import { LoginComponent } from "./entrance/login/login.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [RouterOutlet, SharedModule, CommonModule, RouterLink, RouterLinkActive,
     LoansComponent, CollectionsComponent, TabsComponent, HeaderComponent,
-    CustomersComponent, HomeComponent, HeaderComponent],
+    CustomersComponent, HomeComponent, HeaderComponent, LoginComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

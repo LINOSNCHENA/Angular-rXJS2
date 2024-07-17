@@ -1,0 +1,18 @@
+<p>user works!</p>
+<div *ngIf="lastObject">
+    <h1>Last Object in Session:</h1>
+    <pre>{{ lastObject | json }}</pre> <!-- Use the json pipe to format the object -->
+  </div>
+  <div *ngIf="!lastObject">
+    <p>Loading...</p> <!-- Display a loading message while the data is being fetched -->
+  </div>
+  ======================================
+
+  <div *ngIf="sessionActive">
+    <h1>Last Active in Session:</h1>
+    <pre>{{ sessionActive | json }}</pre> <!-- Use the json pipe to format the object -->
+  </div>
+  <div *ngIf="!sessionActive">
+    <p>Loading...</p> <!-- Display a loading message while the data is being fetched -->
+  </div>
+  <!-- {{sessionActive}} -->

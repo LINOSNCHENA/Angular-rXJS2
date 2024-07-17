@@ -41,6 +41,7 @@ ng generate component analytics --standalone
 ng generate module shared
 ng generate service services/post
 ng generate service services/supabase
+ng generate service services/loans
 
 
 npm install madge -g
@@ -51,11 +52,21 @@ ng generate environments
 ng generate component header
 ng generate component tabs
 
+ng generate component entrance/login
+ng generate component entrance/user
+
 
 
 ## Angular
 
 ng add @ngx-env/builder
+
+
+
+## Update
+ng generate UpdateData/Analyticsform
+ng generate c updateData/analytics-form
+
 
 
 

@@ -1,0 +1,111 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f7fafc;
+    color: #2d3748;
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    height: 100vh;
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+    margin-bottom: 24px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #1a202c;
+  }
+  
+  .logo img {
+    width: 32px;
+    height: 32px;
+    margin-right: 8px;
+  }
+  
+  .card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    padding: 24px;
+  }
+  
+  .card-header h1 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 24px;
+    color: #2d3748;
+  }
+  
+  .form-group {
+    margin-bottom: 16px;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: 500;
+  }
+  
+  .form-group input {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    background-color: #edf2f7;
+    color: #2d3748;
+  }
+  
+  .form-group input:focus {
+    outline: none;
+    border-color: #f56565;
+    box-shadow: 0 0 0 3px rgba(245, 101, 101, 0.4);
+  }
+  
+  .submit-btn {
+    width: 100%;
+    padding: 12px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #fff;
+    background-color: #f56565;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .submit-btn:hover {
+    background-color: #e53e3e;
+  }
+  
+  .submit-btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(245, 101, 101, 0.4);
+  }
+  
+  .signup-link {
+    margin-top: 16px;
+    font-size: 14px;
+    color: #718096;
+  }
+  
+  .signup-link a {
+    color: #f56565;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  
+  .signup-link a:hover {
+    color: #e53e3e;
+  }
+  

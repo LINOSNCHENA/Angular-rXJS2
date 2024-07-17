@@ -6,6 +6,7 @@ import { CollectionsComponent } from './collections/collections.component';
 import { HomeComponent } from './home/home.component';
 import { AnalyticsComponent } from './analytics/analytics.component';
 import { CustomersComponent } from './customers/customers.component';
+import { UserComponent } from './entrance/user/user.component';
 
 export const routes:  Routes = [
     { path: 'header', component: HeaderComponent },
@@ -15,6 +16,7 @@ export const routes:  Routes = [
     { path: 'loans', component: LoansComponent },
     { path: 'collections', component: CollectionsComponent },
     { path: 'analytics', component: AnalyticsComponent },
+    { path: 'user', component: UserComponent },
     { path: 'tabs', component: TabsComponent },
     { path: '', redirectTo: '/home', pathMatch: 'full' }
   ];

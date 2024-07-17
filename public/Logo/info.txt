@@ -1,0 +1,14 @@
+
+Hope you enjoy your new logo, here are the people that
+made your beautiful logo happen :)
+font name: EpoClassic-Lig
+font link: https://www.fontspring.com/fonts/hoftype/epocaclassic/epoca-classic-light
+font author: Hoftype
+font author site: http://www.hoftype.com/
+Slogan Font: Questrial-Regular.otf
+
+icon designer: Alfredo @ IconsAlfredo.us
+icon designer link: /AlfredoCreates
+        
+{"bg":"#0038F4","icon":"#AEFFF4","font":"#AEFFF4","slogan":"#c2ffff"}
+      

@@ -1,0 +1,95 @@
+<div class="container">
+    <form [formGroup]="analyticsForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="id">ID:</label>
+        <input id="id" formControlName="id" type="number" required>
+        <div *ngIf="analyticsForm.get('id')?.invalid && analyticsForm.get('id')?.touched">
+          ID is required.
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="created">Created Date:</label>
+        <input id="created" formControlName="created" type="date" required>
+        <div *ngIf="analyticsForm.get('created')?.invalid && analyticsForm.get('created')?.touched">
+          Created Date is required.
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="yearx">Year:</label>
+        <input id="yearx" formControlName="yearx" type="number">
+      </div>
+  
+      <div class="form-group">
+        <label for="monthx">Month:</label>
+        <input id="monthx" formControlName="monthx" type="text">
+      </div>
+  
+      <div class="form-group">
+        <label for="collectedx">Collected:</label>
+        <input id="collectedx" formControlName="collectedx" type="number">
+      </div>
+  
+      <div class="form-group">
+        <label for="disbursedx">Disbursed:</label>
+        <input id="disbursedx" formControlName="disbursedx" type="number">
+      </div>
+  
+      <div class="form-group">
+        <label for="updated">Updated Date:</label>
+        <input id="updated" formControlName="updated" type="date">
+      </div>
+  
+      <div class="form-group">
+        <label for="enforcerx">Enforcer:</label>
+        <input id="enforcerx" formControlName="enforcerx" type="text">
+      </div>
+  
+      <div class="form-group">
+        <label for="leaderx">Leader:</label>
+        <input id="leaderx" formControlName="leaderx" type="text">
+      </div>
+  
+      <div class="form-group">
+        <label for="fotox">Photo:</label>
+        <input id="fotox" formControlName="fotox" type="number" required>
+        <div *ngIf="analyticsForm.get('fotox')?.invalid && analyticsForm.get('fotox')?.touched">
+          Photo is required.
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="requiredx">Required:</label>
+        <input id="requiredx" formControlName="requiredx" type="number">
+      </div>
+  
+      <div class="form-group">
+        <label for="profitx">Profit:</label>
+        <input id="profitx" formControlName="profitx" type="number">
+      </div>
+  
+      <div class="form-group">
+        <label for="dealx">Deal:</label>
+        <input id="dealx" formControlName="dealx" type="number">
+      </div>
+  
+      <div class="form-group">
+        <label for="periodx">Period:</label>
+        <input id="periodx" formControlName="periodx" type="text">
+      </div>
+  
+      <div class="form-group">
+        <label for="penaltyx">Penalty:</label>
+        <input id="penaltyx" formControlName="penaltyx" type="number">
+      </div>
+  
+      <div class="form-group">
+        <label for="balance_open">Balance Open:</label>
+        <input id="balance_open" formControlName="balance_open" type="number">
+      </div>
+  
+      <div class="form">
+        
+      </div>
+  

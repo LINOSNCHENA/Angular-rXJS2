@@ -1,0 +1,16 @@
+.application-info {
+    background-color: #f0f0f0;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    border: 2px solid #ccc; /* Adding border */
+}
+
+.application-info p {
+    margin: 8px 0;
+}
+
+.application-info strong {
+    color: #333;
+}
