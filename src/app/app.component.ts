@@ -9,12 +9,13 @@ import { CommonModule } from '@angular/common';
 import { HeaderComponent } from "./header/header.component";
 import { TabsComponent } from './tabs/tabs.component';
 import { LoginComponent } from "./entrance/login/login.component";
+import { UserComponent } from './entrance/user/user.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [RouterOutlet, SharedModule, CommonModule, RouterLink, RouterLinkActive,
-    LoansComponent, CollectionsComponent, TabsComponent, HeaderComponent,
+    LoansComponent, CollectionsComponent, TabsComponent, HeaderComponent,LoginComponent,UserComponent,
     CustomersComponent, HomeComponent, HeaderComponent, LoginComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'

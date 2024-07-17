@@ -10,13 +10,12 @@ import { UserComponent } from './entrance/user/user.component';
 
 export const routes:  Routes = [
     { path: 'header', component: HeaderComponent },
-    { path: 'home', component: HomeComponent },
-    
+    { path: 'home', component: HomeComponent },    
     { path: 'customers', component: CustomersComponent },
     { path: 'loans', component: LoansComponent },
     { path: 'collections', component: CollectionsComponent },
     { path: 'analytics', component: AnalyticsComponent },
     { path: 'user', component: UserComponent },
     { path: 'tabs', component: TabsComponent },
-    { path: '', redirectTo: '/home', pathMatch: 'full' }
+    { path: '', redirectTo: '/user', pathMatch: 'full' }
   ];
