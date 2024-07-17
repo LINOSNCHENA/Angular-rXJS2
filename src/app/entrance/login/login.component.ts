@@ -18,7 +18,8 @@ export class LoginComponent implements OnInit {
   private _authService = inject(AuthService);
   private _router = inject(Router);
   loading = false;
-  dataX!: SessionData;
+  sessionData: SessionData | null = null;
+  sessionDatad: any;
 
   form = this._formBuilder.group<LogInForm>({
     email: this._formBuilder.control(null, [
@@ -30,28 +31,27 @@ export class LoginComponent implements OnInit {
       Validators.minLength(6),
     ]),
   });
-  lastObject: any;
-  sessionStatus2: any;
 
   constructor(private authService: AuthService) { }
-  sessionData: SessionData | null = null;
-  sessionActive: any | null = null;
 
   ngOnInit(): void {
-
-    this.authService.session2().subscribe({
-      next: (data: SessionData) => {
-        this.sessionData = data;
-        console.log('Session Data:', this.sessionData);
-      },
-      error: err => {
-        console.error('Error fetching session data:', err);
-      }
-    });
-
-  //  this.sessionActive = this.authService.getSessionDataFromLocalStorage();
- //   alert(' ACTIVE SESSION  : ' + this.sessionActive);
-
+    this.sessionData = this.authService.getSessionDataFromLocalStorage();
+    if (this.sessionData) {
+      this._router.navigate(['analytics']);
+    } else {
+      this.authService.session3().subscribe({
+        next: (data: SessionData) => {
+          this.sessionData = data;
+          console.log('Session Data:', this.sessionData);
+          if (this.sessionData.session.access_token) {
+            this._router.navigate(['user']);
+          }
+        },
+        error: (err) => {
+          console.error('Error fetching session data:', err);
+        }
+      });
+    }
   }
 
   async onSubmit(): Promise<void> {
@@ -66,18 +66,9 @@ export class LoginComponent implements OnInit {
       const { error } = await this._authService.signInWithPassword(email, password);
       if (error) throw error;
       const session = await this._authService.session();
-      if (session) {
-     ///   alert('User authenticated, session data: ' + JSON.stringify(session));
-        this.lastObject = session
-        this._router.navigate(['user']);
-      } else {
-       // alert('User not authenticated, no session data available.');
-      }
+      if (session) { this.sessionDatad = session;  this._router.navigate(['user']); }
     } catch (error) {
-      if (error instanceof Error) {
-       // alert(error.message);
-        console.error('Login error:', error.message); // Log the error message
-      }
+      if (error instanceof Error) { console.error('Login error:', error.message); }
     } finally {
       this.form.reset();
       this.loading = false;
