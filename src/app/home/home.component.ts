@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { SharedModule } from '../shared/shared.module';
+import { SharedModule } from '../shared/model/shared.module';
 import { CommonModule, NgFor } from '@angular/common';
 import { map, Observable } from 'rxjs';
 import { CustomersComponent } from '../customers/customers.component';
@@ -23,11 +23,14 @@ export class HomeComponent implements OnInit {
   posts$!: Observable<Post[]>;
   processedPosts: Post[] = [];
   topTwoPosts$!: Observable<Post[]>;
+  sessionUser: any;
 
   constructor(private dataService: PostService) { }
 
   ngOnInit() {
     this.fetchPosts();
+    const storedSessionData = localStorage.getItem('sessionData');
+    this.sessionUser=String(storedSessionData)
   }
 
   fetchPosts() {

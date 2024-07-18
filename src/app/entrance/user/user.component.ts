@@ -15,30 +15,7 @@ import { CommonModule } from '@angular/common';
 export class UserComponent {
 
   lastObject: any;
-  sessionStatus2: any;
-
-  // constructor(private authService: AuthService) { }
-  // sessionData: SessionData | null = null;
-  // sessionActive: any | null = null;
-
-  // ngOnInit(): void {
-
-  //   this.authService.session2().subscribe({
-  //     next: (data: SessionData) => {
-  //       this.sessionData = data;
-  //       console.log('Session Data:', this.sessionData);
-  //     },
-  //     error: err => {
-  //       console.error('Error fetching session data:', err);
-  //     }
-  //   });
-
-  //   this.sessionActive = this.authService.getSessionDataFromLocalStorage();
-  //   alert(' ACTIVE SESSION  : ' + this.sessionActive);
-  // }
-
-
-
+  sessionUser: any;
   sessionData: SessionData | null = null;
 
   constructor(private authService: AuthService) {}
@@ -48,6 +25,7 @@ export class UserComponent {
       (data: SessionData) => {
         this.sessionData = data;
         console.log('Session Data:', this.sessionData);
+        this.sessionUser=String(this.sessionData.session.user.email)
       },
       (error) => {
         console.error('Error fetching session data:', error);

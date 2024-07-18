@@ -37,11 +37,15 @@ ng generate component customers --standalone
 ng generate component loans --standalone
 ng generate component collections --standalone
 ng generate component analytics --standalone
+ng generate component analytics/edit --standalone
 
 ng generate module shared
+ng generate c shared/ReversePipe
+
 ng generate service services/post
 ng generate service services/supabase
 ng generate service services/loans
+ng generate service services/analytics/analytics
 
 
 npm install madge -g

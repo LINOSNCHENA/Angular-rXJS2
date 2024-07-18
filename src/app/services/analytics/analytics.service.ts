@@ -1,38 +1,28 @@
-import { Injectable, computed, inject, signal } from '@angular/core';
-import { AuthService } from './security/auth.service';
-import { EnvService } from './env/env.service';
+import { computed, inject, Injectable, signal } from '@angular/core';
+import { Analytics, AnalyticState } from '../model.model';
+import { AuthService } from '../security/auth.service';
+import { EnvService } from '../env/env.service';
 
-interface NoteState {
-  notes: Note[];
-  loading: boolean;
-  error: boolean;
-}
-
-export interface Note {
-  id: string;
-  title: string | null;
-  note: string | null;
-  isImportant: boolean;
-  user_id: string;
-}
-
-@Injectable({ providedIn: 'root' })
-export class NotesService {
+@Injectable({
+  providedIn: 'root'
+})
+export class AnalyticsService {
   private _supabaseClient = inject(EnvService).supabaseClient;
   private _authService = inject(AuthService);
-  private _state = signal<NoteState>({
+  private _state = signal<AnalyticState>({
     notes: [],
     loading: false,
     error: false,
   });
 
   // selectors
-  database='loans';
+  database = 'analytics';
   notes = computed(() => this._state().notes);
   loading = computed(() => this._state().loading);
   error = computed(() => this._state().error);
 
-  async getAllNotes() {
+
+  async getAllAnalytics() {
     try {
       this._state.update((state) => ({
         ...state,
@@ -44,8 +34,8 @@ export class NotesService {
       const { data } = await this._supabaseClient
         .from(this.database)
         .select()
-        .eq('user_id', session?.user.id)
-        .returns<Note[]>();
+        // .eq('user_id', session?.user.id)
+        .returns<Analytics[]>();
 
       if (data) {
         this._state.update((state) => ({
@@ -66,23 +56,22 @@ export class NotesService {
     }
   }
 
-  async insertNote(note: {
-    title: string;
-    note: string | null;
-    isImportant: boolean;
-  }) {
+  async insertAnalytics(item: Analytics) {
     try {
       const {
         data: { session },
       } = await this._authService.session();
       await this._supabaseClient.from(this.database).insert({
         user_id: session?.user.id,
-        title: note.title,
-        note: note.note,
-        isImportant: note.isImportant,
+        created: item.created, yearx: item.yearx,
+        monthx: item.monthx, collectedx: item.collectedx,
+        disbursedx: item.disbursedx,
+        leaderx: '', updated: item.updated,
+        periodx: '', mProfited: 0, mSalaries: 0, fotox: 0,
+        id: 0, success: 0
       });
 
-      this.getAllNotes();
+      this.getAllAnalytics();
     } catch (error) {
       this._state.update((state) => ({
         ...state,
@@ -91,12 +80,7 @@ export class NotesService {
     }
   }
 
-  async updateNote(note: {
-    id: string;
-    title: string;
-    note: string | null;
-    isImportant: boolean;
-  }) {
+  async updateAnalytics(note: Analytics) {
     try {
       await this._supabaseClient
         .from(this.database)
@@ -105,7 +89,7 @@ export class NotesService {
         })
         .eq('id', note.id);
 
-      this.getAllNotes();
+      this.getAllAnalytics();
     } catch (error) {
       this._state.update((state) => ({
         ...state,
@@ -114,10 +98,10 @@ export class NotesService {
     }
   }
 
-  async deleteNote(id: string) {
+  async deleteAnalytics(id: string) {
     try {
       await this._supabaseClient.from(this.database).delete().eq('id', id);
-      this.getAllNotes();
+      this.getAllAnalytics();
     } catch (error) {
       this._state.update((state) => ({
         ...state,
@@ -125,4 +109,16 @@ export class NotesService {
       }));
     }
   }
+
+  async getAnalyticsById(id: number): Promise<any> {
+    const lists = await this._supabaseClient
+      .from(this.database)
+      .select('*')
+      .eq('list_id', id)
+      .order('position');
+
+    return lists.data || [];
+  }
+
+
 }

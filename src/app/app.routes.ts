@@ -8,6 +8,7 @@ import { AnalyticsComponent } from './analytics/analytics.component';
 import { CustomersComponent } from './customers/customers.component';
 import { UserComponent } from './entrance/user/user.component';
 import { LoginComponent } from './entrance/login/login.component';
+import { EditComponent } from './analytics/edit/edit.component';
 
 export const routes:  Routes = [
     { path: 'header', component: HeaderComponent },
@@ -20,5 +21,6 @@ export const routes:  Routes = [
     { path: 'tabs', component: TabsComponent },
     { path: 'user', component: UserComponent },
     { path: 'login', component: LoginComponent },
+    { path: 'edit-analytics/:id', component: EditComponent },
     { path: '', redirectTo: '/login', pathMatch: 'full' }
   ];

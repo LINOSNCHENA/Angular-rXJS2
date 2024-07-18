@@ -1,0 +1,34 @@
+
+<div class="edit-container">
+  <h1>Edit Analytics</h1>
+  
+  <form (ngSubmit)="saveChanges()" [formGroup]="analyticsForm">
+    <div class="form-group">
+      <label for="created">Created Date:</label>
+      <input id="created" type="date" formControlName="created" [value]="analytic1.created | date:'yyyy-MM-dd'" />
+    </div>
+
+    <div class="form-group">
+      <label for="fotox">Fotox:</label>
+      <input id="fotox" type="number" formControlName="fotox" [value]="analytic1.fotox" />
+    </div>
+
+    <div class="form-group">
+      <label for="mProfited">Monthly Profited:</label>
+      <input id="mProfited" type="number" formControlName="mProfited" [value]="analytic1.mProfited" />
+    </div>
+
+    <div class="form-group">
+      <label for="mSalaries">Monthly Salaries:</label>
+      <input id="mSalaries" type="number" formControlName="mSalaries" [value]="analytic1.mSalaries" />
+    </div>
+
+    <div class="form-group">
+      <label for="success">Success Rate:</label>
+      <input id="success" type="number" formControlName="success" [value]="analytic1.success" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Save</button>
+  </form>
+</div>
+

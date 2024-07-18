@@ -59,8 +59,15 @@ export interface LogInForm {
   password: FormControl<null | string>;
 }
 
+export interface AnalyticState {
+  notes: Analytics[];
+  loading: boolean;
+  error: boolean;
+}
+
+
 export interface Analytics {
-  id: number;
+  id? : number;
   created: Date;
   yearx?: number;
   monthx?: string;
@@ -69,7 +76,7 @@ export interface Analytics {
   updated?: Date;
   enforcerx?: string;
   leaderx?: string;
-  fotox: number;
+  fotox?: number;
   requiredx?: number;
   profitx?: number;
   dealx?: number;
@@ -77,9 +84,9 @@ export interface Analytics {
   penaltyx?: number;
   balance_open?: number;
   balance_triad?: number;
-  mProfited: number;
-  mSalaries: number;
-  success: number;
+  mProfited?:number;
+  mSalaries?: number;
+  success?: number;
 }
 
 export interface Post {

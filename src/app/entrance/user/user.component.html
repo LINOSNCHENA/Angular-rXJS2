@@ -1,5 +1,6 @@
+
 <div *ngIf="sessionData">
-  <h1>Session Data</h1>
+  <h1>User | Session Data | {{ sessionUser }}</h1>
   <pre>{{ sessionData | json }}</pre>
 </div>
 <div *ngIf="!sessionData">

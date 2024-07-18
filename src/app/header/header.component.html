@@ -1,9 +1,8 @@
 <header>
   <header>
     <nav>
-      <ul>
-        <li><a routerLink="/login" routerLinkActive="active">Pasword</a></li>
-        <li><a routerLink="/user" routerLinkActive="active">Active user</a></li>
+      <ul>       
+        <li><a routerLink="/user" routerLinkActive="active">Account</a></li>
         <li><a routerLink="/analytics" routerLinkActive="active">Dashboard</a></li>
         <li><a routerLink="/loans" routerLinkActive="active">Loan Mgmt</a></li>
         <li><a routerLink="/customers" routerLinkActive="active">Customer</a></li>
@@ -11,6 +10,7 @@
         <li><a routerLink="/loans" routerLinkActive="active">Loan Applications</a></li>
         <li><a routerLink="/collections" routerLinkActive="active">Collections Overview</a></li>
         <li><a routerLink="/tabs" routerLinkActive="active">Tabs Applications</a></li>
+        <li><a routerLink="/login" routerLinkActive="active">Login |{{sessionUser}}</a></li>
       </ul>
     </nav>
   </header>

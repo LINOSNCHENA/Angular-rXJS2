@@ -37,14 +37,15 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
     this.sessionData = this.authService.getSessionDataFromLocalStorage();
     if (this.sessionData) {
-      this._router.navigate(['analytics']);
+      this._router.navigate(['login']);
+
     } else {
       this.authService.session3().subscribe({
         next: (data: SessionData) => {
           this.sessionData = data;
           console.log('Session Data:', this.sessionData);
           if (this.sessionData.session.access_token) {
-            this._router.navigate(['user']);
+            this._router.navigate(['login']);
           }
         },
         error: (err) => {
